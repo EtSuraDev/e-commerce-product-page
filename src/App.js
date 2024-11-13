@@ -8,23 +8,24 @@ function App() {
   let [items, setItems] = useState(0)
   let [cartItems, setCartItems] = useState(0)
   let price = 125
-  let totalPrice = price * items
-  console.log(totalPrice)
-  console.log(cartItems)
+  let totalPrice = price * cartItems
   function onclickPlusOrMinusBtn(num){
     setItems(prev => {
       if(num === -1) return prev === 0 ? 0 : prev + num
       return prev + num
     })
   }
+  function onclickCheckoutOrDelBtn(){
+    setCartItems(0)
+  }
   function onclickAddToCartBtn(){
-    console.log("checkd")
     setCartItems(prev => items)
+    setItems(0)
   }
   return (
     <div className="App h-[772px] max-w-[1110px] m-auto relative">
       <header className=" max-w-[1110px] h-fit">
-        <Header /> 
+        <Header cartItems={cartItems} totalPrice={totalPrice} onclickCheckoutOrDelBtn={onclickCheckoutOrDelBtn}/> 
         <hr />
       </header>
       <Cart/>

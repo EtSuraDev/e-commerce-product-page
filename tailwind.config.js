@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import fluid, { extract, screens, fontSize  } from 'fluid-tailwind'
+import daisyui from "daisyui"
+
 
 module.exports = {
   content: {
@@ -14,5 +16,5 @@ module.exports = {
     fontSize,
     extend: {},
   },
-  plugins: [ fluid],
+  plugins: [ daisyui,fluid],
 }
