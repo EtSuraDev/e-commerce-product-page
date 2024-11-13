@@ -2,7 +2,6 @@
 import Header from "./components/header";
 import Images from "./components/img-section";
 import ContentAndPrice from "./components/content-And-Price";
-import SideBar from "./sideBar";
 import Cart from "./components/cart";
 import { useState } from "react";
 function App() {
@@ -10,6 +9,7 @@ function App() {
   let [cartItems, setCartItems] = useState(0)
   let price = 125
   let totalPrice = price * items
+  console.log(totalPrice)
   console.log(cartItems)
   function onclickPlusOrMinusBtn(num){
     setItems(prev => {
