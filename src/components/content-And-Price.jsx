@@ -1,7 +1,7 @@
 import PLusAndMinusBtn from "./plus-And-Minus-Btn";
 import AddToCartBtn from "./Add-to-Cart-Btn";
 
-
+  
 
 export default function ContentAndPrice(props){
     return(
