@@ -19,7 +19,7 @@ export default function Cart(props){
         </div>
     )
     let hiden = (
-        <div className=" flex justify-center items-center ">
+        <div className=" flex justify-center items-center">
             <p>Your cart is empty</p>
         </div>
     )

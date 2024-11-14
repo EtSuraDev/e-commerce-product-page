@@ -17,7 +17,20 @@ export default function Header(props){
             <Cart displayCart={displayCart} cartItems={props.cartItems} totalPrice={props.totalPrice} func={props.onclickCheckoutOrDelBtn} />
             <div className=" flex px-[24px] pt-[17.6px] pb-[26.4px] h-[67.9px] items-center justify-between bg-white md:px-[24px] md:pt-[29px] md:pb-[32px] md:h-[113px]">
                 <div className=" flex items-center">
-                    <Menu func={props.onclickMenu} />
+                    <div className="drawer block">
+                        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                        <div className="drawer-content">
+                            {/* Page content here */}
+                            
+                            <label htmlFor="my-drawer" className=""><Menu func={props.onclickMenu} /></label>
+                        </div>
+                        <div className="drawer-side z-50">
+                            <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                                {hideSection.map((item,index) => <li key={index}><a>{item}</a></li> )}
+                            </ul>
+                        </div>
+                    </div>
                     <img src="./images/logo.svg" alt="" className="m-0 mr-[32px] md:mr-[32px] lg:mr-[52px] cursor-pointer " />
                     {hideSectionMap}
                 </div>
